@@ -39,6 +39,11 @@ $colorWhite: #FFF;
     color: $colorBlue;
 
     cursor: pointer;
+    transition: background-color 0.3s ease-out
+}
+.button:hover,
+.button:focus-visible {
+    background-color: #ddd;
 }
 
 // общие стили и элементы
@@ -54,10 +59,20 @@ $colorWhite: #FFF;
 }
 
 .checkList{
+    min-height: 91px;
+
     border-radius: 10px;
     overflow: hidden;
+
+    position: relative;
 }
     .checkList-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
         border-radius: 10px;
 
         padding: 12px 18px 15px 22px;
@@ -84,9 +99,19 @@ $colorWhite: #FFF;
 
             font-size: 20px;
             line-height: 150%;
+
+            position: relative;
         }
         .checkList-loader__text{
             width: 30px;
+        }
+        .checkList-loader__progress{
+            position: absolute;
+            top: -2px;
+            left: -2px;
+
+            width: 64px;
+            height: 64px;
         }
 
         .checkList-main{
@@ -128,7 +153,111 @@ $colorWhite: #FFF;
     }
 
     .checkList-content{
-        padding: 20px;
+        padding: 91px 22px 15px 22px;
 
-        display: none;
+        background-color: #ddd;
+        // display: none;
+        overflow: hidden;
+        // line-height: 0;
+        // color: transparent;
+        // transition: line-height 0.5s, color 0.5s;
     }
+    .checkList-content__list{
+        list-style: none;
+    }
+    .checkList-content__item{
+        padding: 10px 0px;
+
+        display: flex;
+        align-items: center;
+    }
+    .checkList-content__task{
+        margin-left: 20px;
+    }
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.circular-progress {
+    --size: 62px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 3px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-animation 5s linear 0s 1 forwards;
+}
+
+.circular-progress circle {
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    stroke-width: var(--stroke-width);
+    fill: none;
+    stroke-linecap: round;
+}
+
+.circular-progress circle.bg {
+    stroke: #ddd;   
+}
+
+.circular-progress circle.fg {
+    transform: rotate(-90deg);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0.3s linear 0s;
+    stroke: #fff;
+}
+@property --progress {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+    }
+    
+    @keyframes progress-animation {
+    from {
+        --progress: 0;
+    }
+    to {
+        --progress: 10;
+    }
+}
