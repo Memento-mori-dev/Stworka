@@ -22,6 +22,12 @@
                         <p class="checkList-loader__text">
                             <span>0</span>/<span>7</span>
                         </p>
+                        <svg class="checkList-loader__progress circular-progress">
+                            <circle class="fg"
+                                cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                stroke-dasharray="361.25 361.25">
+                            </circle>
+                        </svg>
                     </div>
                     <div class="checkList-main">
                         <div class="checkList-main__item">
@@ -42,15 +48,46 @@
                     </div>
                 </div>
                 <div class="checkList__open">
-                    <button class="button">
+                    <button class="button" aria-expanded="" aria-controls="list">
                         Открыть чеклист
                     </button>
                 </div>
             </div>
             <div class="checkList-content">
-
+                <ul class="checkList-content__list" aria-hidden="true">
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                    <li class="checkList-content__item">
+                        <input type="checkbox" tabindex="-1">
+                        <p class="checkList-content__task">test</p>
+                    </li>
+                </ul>
             </div>
         </article>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
