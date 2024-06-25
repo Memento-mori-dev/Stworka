@@ -73,8 +73,20 @@ $colorWhite: #FFF;
     }
 
         .checkList-loader{
-            width: 60px;
+            margin-top: 4px;
+
             height: 60px;
+
+            padding: 15px 14px;
+
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            font-size: 20px;
+            line-height: 150%;
+        }
+        .checkList-loader__text{
+            width: 30px;
         }
 
         .checkList-main{
