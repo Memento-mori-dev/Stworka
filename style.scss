@@ -3,3 +3,120 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+// переменные
+
+$weightMain: 400;
+$weightSecond: 600;
+
+$backgroundBlue: #3579F5;
+$backgroundBlueDark: #2364DB;
+$backgroundWhiteGray: #F4F8FF;
+
+$colorBlue: #4777ED;
+$colorWhite: #FFF;
+
+// переменные
+
+// общие стили и элементы
+
+:root {
+    font-family: "Inter", sans-serif;
+    font-weight: $weightMain;
+    color: $colorWhite;
+}
+
+.button{
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 25px;
+
+    font-size: 14px;
+    line-height: 143%;
+
+    background-color: $backgroundWhiteGray;
+    color: $colorBlue;
+
+    cursor: pointer;
+}
+
+// общие стили и элементы
+
+// to-do
+
+.container{
+    margin: auto;
+
+    padding-top: 20px;
+
+    width: 743px;
+}
+
+.checkList{
+    border-radius: 10px;
+    overflow: hidden;
+}
+    .checkList-header{
+        border-radius: 10px;
+
+        padding: 12px 18px 15px 22px;
+
+        background-color: $backgroundBlue;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .checkList-header__content{
+        display: flex;
+    }
+
+        .checkList-loader{
+            width: 60px;
+            height: 60px;
+        }
+
+        .checkList-main{
+            margin-left: 16px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: self-start;
+        }
+        .checkList-main__item{
+            margin-top: 4px;
+
+            &:first-child{
+                margin-top: 0px;
+            }
+        }
+        .checkList-tag{
+            border-radius: 40px;
+
+            padding: 0 13px;
+
+            font-size: 12px;
+            line-height: 150%;
+
+            background-color: $backgroundBlueDark;
+        }
+        .checkList-title{
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 133%;
+        }
+        .checkList-next-action{
+            font-size: 12px;
+            line-height: 150%;
+        }
+
+    .checkList__open{
+        padding-top: 14px;
+    }
+
+    .checkList-content{
+        padding: 20px;
+
+        display: none;
+    }
