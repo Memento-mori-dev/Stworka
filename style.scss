@@ -63,14 +63,8 @@ $colorWhite: #FFF;
 
     border-radius: 10px;
     overflow: hidden;
-
-    position: relative;
 }
     .checkList-header{
-        position: absolute;
-        top: 0;
-        left: 0;
-
         width: 100%;
 
         border-radius: 10px;
@@ -174,4 +168,17 @@ $colorWhite: #FFF;
     .checkList-content__task{
         margin-left: 20px;
     }
-    
+
+    .circle{
+        animation: dash 2s linear 0s 1 forwards;
+    }
+
+    @keyframes dash{
+        from {
+          stroke-dashoffset: 354;
+        }
+        to {
+          stroke-dashoffset: 270;
+        }
+    }
+      

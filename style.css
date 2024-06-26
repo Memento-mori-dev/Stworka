@@ -37,13 +37,9 @@
   min-height: 91px;
   border-radius: 10px;
   overflow: hidden;
-  position: relative;
 }
 
 .checkList-header {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   border-radius: 10px;
   padding: 12px 18px 15px 22px;
@@ -134,4 +130,17 @@
 
 .checkList-content__task {
   margin-left: 20px;
+}
+
+.circle {
+  animation: dash 2s linear 0s 1 forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 354;
+  }
+  to {
+    stroke-dashoffset: 270;
+  }
 }/*# sourceMappingURL=style.css.map */
