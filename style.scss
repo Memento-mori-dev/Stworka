@@ -101,11 +101,11 @@ $colorWhite: #FFF;
         }
         .checkList-loader__progress{
             position: absolute;
-            top: -2px;
-            left: -2px;
+            top: -1.5px;
+            left: -1.5px;
 
-            width: 64px;
-            height: 64px;
+            width: 61px;
+            height: 61px;
         }
 
         .checkList-main{
@@ -145,42 +145,45 @@ $colorWhite: #FFF;
     .checkList__open{
         padding-top: 14px;
     }
-
-    .checkList-content{
-        padding: 91px 22px 15px 22px;
-
-        background-color: #ddd;
-        // display: none;
-        overflow: hidden;
-        // line-height: 0;
-        // color: transparent;
-        // transition: line-height 0.5s, color 0.5s;
-    }
-    .checkList-content__list{
-        list-style: none;
-    }
-    .checkList-content__item{
-        padding: 10px 0px;
-
-        display: flex;
-        align-items: center;
-    }
-    .checkList-content__task{
-        margin-left: 20px;
-    }
+    
+    $colorCircleLouder:#FFF;
 
     .circle{
-        animation: dash 2s linear 0s 1 forwards;
+        --size: 61px;
+        --half-size: calc(var(--size) / 2);
+        --stroke-width: 2px;
+        --radius: calc((var(--size) - var(--stroke-width)) / 2);
+        --circumference: calc(var(--radius) * pi * 2);
+        --dash: calc((var(--progress) * var(--circumference)) / 100);
+
+        cx: var(--half-size);
+        cy: var(--half-size);
+        r: var(--radius);
+        stroke-width: var(--stroke-width);
+        fill: none;
+        stroke-linecap: round;
+
+        transform: rotate(-90deg);
+        transform-origin: var(--half-size) var(--half-size);
+        stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+        transition: stroke-dasharray 0.3s linear 0s;
+        stroke: $colorCircleLouder;
+
+        animation: progress-animation 10s linear 0s 1 forwards;
     }
 
-    // $onePercent: calc(0.84);
 
-    // @keyframes dash{
-    //     from {
-    //       stroke-dashoffset: 354;
-    //     }
-    //     to {
-    //       stroke-dashoffset: 270;
-    //     }
-    // }
-      
+    @property --progress {
+        syntax: "<number>";
+        inherits: false;
+        initial-value: 0;
+    }
+
+    @keyframes progress-animation {
+        from {
+            --progress: 0;
+        }
+        to {
+            --progress: 100;
+        }
+    }
