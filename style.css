@@ -134,13 +134,4 @@
 
 .circle {
   animation: dash 2s linear 0s 1 forwards;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 354;
-  }
-  to {
-    stroke-dashoffset: 270;
-  }
 }/*# sourceMappingURL=style.css.map */
