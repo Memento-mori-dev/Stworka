@@ -99,13 +99,15 @@ $colorWhite: #FFF;
         .checkList-loader__text{
             width: 30px;
         }
-        .checkList-loader__progress{
+        .checkList-loader__progress {
             position: absolute;
             top: -1.5px;
             left: -1.5px;
-
-            width: 61px;
-            height: 61px;
+          
+            & > svg{
+              width: 61px;
+              height: 61px;
+            }
         }
 
         .checkList-main{

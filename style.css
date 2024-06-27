@@ -71,6 +71,8 @@
   position: absolute;
   top: -1.5px;
   left: -1.5px;
+}
+.checkList-loader__progress > svg {
   width: 61px;
   height: 61px;
 }
